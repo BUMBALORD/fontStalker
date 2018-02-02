@@ -1,5 +1,5 @@
 $(function(){
-  // var mykey = config.API_KEY;
+
   function addGoogleFont(fontName) {
     fontName.toUpperCase();
     $("head").append("<link href='https://fonts.googleapis.com/css?family=" + fontName + "' rel='stylesheet' type='text/css'>");
