@@ -15,17 +15,6 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About Me</a>
-          </li>
-        </ul>
-        </div>
       </nav>
 
       <div class="container-fluid">
@@ -33,14 +22,15 @@
           <div class="col-md-12">
             <div class="jumbotron jumbotron-fluid">
               <div class="container">
-                <h1 class="display-4">Font Stalker</h1>
-                <p class="lead">So what if that font has a new boyfriend. Keep sending her letters. She'll come around eventually...</p>
+                <div class="logoBox col-md-6 center">
+                  <img src="assets/fs.png" class="img-fluid">
+                </div>
                 <form>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Font Name</label>
-                    <input type="text" class="form-control" id="fontInput" placeholder="Enter Font Name">
+                    <label for="exampleInputEmail1">Google Font Name</label>
+                    <input type="text" class="form-control" id="fontInput" placeholder="Enter Name Of Google Font You Would Like To Preview!">
                   </div>
-                  <button type="submit" id="submitFont" class="btn btn-primary">Submit</button>
+                  <button type="submit" id="submitFont" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Submit</button>
                 </form>
               </div>
             </div>
@@ -48,16 +38,29 @@
         </div>
         <div class="row">
           <div class="col-md-10 center">
-            <h2 class="exampleHeader"></h2>
-            <p class="exampleText">Cupcake ipsum dolor sit amet toffee topping. Apple pie chocolate cake ice cream candy pudding pudding bear claw. Icing candy muffin chocolate bar. Tiramisu chupa chups gummi bears dessert.
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h2 class="exampleHeader center" id="exampleModalLongTitle"></h2>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body textShow">
+                    <!-- <p class="exampleText">Cupcake ipsum dolor sit amet toffee topping. Apple pie chocolate cake ice cream candy pudding pudding bear claw. Icing candy muffin chocolate bar. Tiramisu chupa chups gummi bears dessert. Tootsie roll dragée icing.</p>
 
-            Tootsie roll dragée icing. Cookie lollipop ice cream jelly beans sesame snaps soufflé. Gummi bears candy icing. Gummies cotton candy oat cake jujubes.
+                    <p class='exampleText'>Powder pie croissant jujubes ice cream pudding pie bear claw brownie. Icing marshmallow apple pie sugar plum brownie candy pudding. Croissant cake jelly beans gummies dessert. Dragée jujubes cookie pie.</p>
 
-            Wafer biscuit bonbon cheesecake cake bonbon caramels donut. Pastry ice cream sweet roll donut icing. Bonbon jelly pastry biscuit gingerbread gummies caramels.
+                    <p class='exampleText'>Chupa chups bear claw tiramisu marshmallow candy chocolate bar cheesecake dessert. Sugar plum marshmallow candy gummies carrot cake tootsie roll gummi bears cake biscuit. Cake croissant gingerbread. Oat cake gummies ice cream candy canes chupa chups.</p> -->
+                  </div>
+                  <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-            Powder pie croissant jujubes ice cream pudding pie bear claw brownie. Icing marshmallow apple pie sugar plum brownie candy pudding. Croissant cake jelly beans gummies dessert. Dragée jujubes cookie pie.
-
-            Chupa chups bear claw tiramisu marshmallow candy chocolate bar cheesecake dessert. Sugar plum marshmallow candy gummies carrot cake tootsie roll gummi bears cake biscuit. Cake croissant gingerbread. Oat cake gummies ice cream candy canes chupa chups.</p>
+                  </div>
+              </div>
+            </div>
+          </div>
           </div>
         </div>
       </div>

@@ -1,8 +1,11 @@
 .exampleText {
-  /*visibility: hidden;*/
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .center {
   margin: 0 auto;
+}
+
+.textCenter {
+  text-align: center;
 }
