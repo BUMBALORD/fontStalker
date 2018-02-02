@@ -1,5 +1,5 @@
 $(function(){
-
+  var mykey = config.API_KEY;
   function addGoogleFont(fontName) {
     fontName.toUpperCase();
     $("head").append("<link href='https://fonts.googleapis.com/css?family=" + fontName + "' rel='stylesheet' type='text/css'>");
@@ -14,7 +14,7 @@ $(function(){
     var font = $('#fontInput').val().trim().toLowerCase();
     // console.log(font);
     $.ajax({
-    url: 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyADMWRN_nOc1sRCdmybHHgX82pNdSWYh9I',
+    url: `https://www.googleapis.com/webfonts/v1/webfonts?key=${mykey}`,
     type: 'GET'
     }).done(function(response){
       for (var i = 0; i < response.items.length; i++) {
