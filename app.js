@@ -15,21 +15,26 @@ $(function(){
     event.preventDefault();
     var found = false;
     var font = $('#fontInput').val().trim().toLowerCase();
-    $('#fontInput').val('');
-    $.ajax({
-    url: `https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyADMWRN_nOc1sRCdmybHHgX82pNdSWYh9I`,
-    type: 'GET'
-    }).done(function(response){
-      for (var i = 0; i < response.items.length; i++) {
-        if (font === response.items[i].family.toLowerCase()) {
-          addGoogleFont(response.items[i].family);
-          found = true;
-        }
-        if(!found) {
-          $(".exampleHeader").html("Sorry, but we couldn't find that font!");
-          $(".exampleText").html('');
-        }
+    if(font === ''){
+      $(".exampleHeader").html("Please enter something. I'm not a psychic!");
+    } else {
+      $('#fontInput').val('');
+      $.ajax({
+      url: `https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyADMWRN_nOc1sRCdmybHHgX82pNdSWYh9I`,
+      type: 'GET'
+      }).done(function(response){
+        for (var i = 0; i < response.items.length; i++) {
+          if (font === response.items[i].family.toLowerCase()) {
+            addGoogleFont(response.items[i].family);
+            found = true;
+          }
+          if(!found) {
+            var headerFont = `<span class='bigger'>${font.toUpperCase()}</span>`
+            $(".exampleHeader").html(`Sorry, but we couldn't find ${headerFont} in Google Fonts`);
+            $(".textShow").html("<img class='img-fluid' src='assets/sorry.png'>");
+          }
   };
   })
-})
+    }
+  })
 })
